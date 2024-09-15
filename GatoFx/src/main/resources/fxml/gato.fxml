@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxWidth="Infinity" prefHeight="500.0" prefWidth="750.0" spacing="10.0" 
+xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="pe.edu.upeu.gatofx.control.GatoControl">
+   <children>
+      <!-- Sección de nombres de jugadores -->
+      <HBox spacing="10.0">
+         <TextField fx:id="player1Name" promptText="Nombre Jugador 1" prefWidth="150.0" 
+            style="-fx-font-size: 14px; -fx-padding: 5px; -fx-background-color: #f9f9f9;"/>
+         <TextField fx:id="player2Name" promptText="Nombre Jugador 2" prefWidth="150.0"
+            style="-fx-font-size: 14px; -fx-padding: 5px; -fx-background-color: #f9f9f9;"/>
+      </HBox>
+      
+      <!-- Botones para iniciar y añadir -->
+      <HBox spacing="10.0">
+         <Button fx:id="startButton" text="Iniciar" prefWidth="80.0"
+            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5px;"/>
+         <Button fx:id="addButton" text="Añadir" prefWidth="80.0"
+            style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 5px;"/>
+      </HBox>
+      
+      <!-- Etiqueta para mostrar el turno actual -->
+      <Label fx:id="turnLabel" text="Turno: X" style="-fx-font-size: 18px; -fx-text-fill: #333333;"/>
+
+      <!-- Sección del tablero del juego de gato (3x3) -->
+      <GridPane alignment="center" hgap="10.0" vgap="10.0" prefHeight="292.0" prefWidth="329.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="50.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="50.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="50.0" vgrow="ALWAYS" />
+         </rowConstraints>
+
+         <!-- Botones del tablero (cuadrados) -->
+         <Button fx:id="button00" maxHeight="Infinity" maxWidth="Infinity"
+            style="-fx-font-size: 24px; -fx-pref-width: 100px; -fx-pref-height: 100px; -fx-background-color: #f2f2f2; -fx-border-color: #cccccc;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+         <Button fx:id="button01" maxHeight="Infinity" maxWidth="Infinity"
+            style="-fx-font-size: 24px; -fx-pref-width: 100px; -fx-pref-height: 100px; -fx-background-color: #f2f2f2; -fx-border-color: #cccccc;" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+         <Button fx:id="button02" maxHeight="Infinity" maxWidth="Infinity"
+            style="-fx-font-size: 24px; -fx-pref-width: 100px; -fx-pref-height: 100px; -fx-background-color: #f2f2f2; -fx-border-color: #cccccc;" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+         <Button fx:id="button10" maxHeight="Infinity" maxWidth="Infinity"
+            style="-fx-font-size: 24px; -fx-pref-width: 100px; -fx-pref-height: 100px; -fx-background-color: #f2f2f2; -fx-border-color: #cccccc;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+         <Button fx:id="button11" maxHeight="Infinity" maxWidth="Infinity"
+            style="-fx-font-size: 24px; -fx-pref-width: 100px; -fx-pref-height: 100px; -fx-background-color: #f2f2f2; -fx-border-color: #cccccc;" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+         <Button fx:id="button12" maxHeight="Infinity" maxWidth="Infinity"
+            style="-fx-font-size: 24px; -fx-pref-width: 100px; -fx-pref-height: 100px; -fx-background-color: #f2f2f2; -fx-border-color: #cccccc;" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+         <Button fx:id="button20" maxHeight="Infinity" maxWidth="Infinity"
+            style="-fx-font-size: 24px; -fx-pref-width: 100px; -fx-pref-height: 100px; -fx-background-color: #f2f2f2; -fx-border-color: #cccccc;" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+         <Button fx:id="button21" maxHeight="Infinity" maxWidth="Infinity"
+            style="-fx-font-size: 24px; -fx-pref-width: 100px; -fx-pref-height: 100px; -fx-background-color: #f2f2f2; -fx-border-color: #cccccc;" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+         <Button fx:id="button22" maxHeight="Infinity" maxWidth="Infinity"
+            style="-fx-font-size: 24px; -fx-pref-width: 100px; -fx-pref-height: 100px; -fx-background-color: #f2f2f2; -fx-border-color: #cccccc;" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+      </GridPane>
+
+      <!-- Tabla para mostrar los resultados de las partidas -->
+      <TableView fx:id="scoreTable" prefHeight="200.0" prefWidth="400.0"
+         style="-fx-background-color: #fff; -fx-border-color: #cccccc;">
+         <columns>
+            <TableColumn text="Partida" fx:id="colPartida" />
+            <TableColumn text="Jugador 1" fx:id="colJugador1" />
+            <TableColumn text="Jugador 2" fx:id="colJugador2" />
+            <TableColumn text="Ganador" fx:id="colGanador" />
+            <TableColumn text="Estado" fx:id="colEstado" />
+         </columns>
+      </TableView>
+   </children>
+</VBox>
